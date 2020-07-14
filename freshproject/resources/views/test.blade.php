@@ -13,6 +13,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{ $name }}</h1>
+    <h1>Product </h1>
+
+    <p>{{ $product }}</p>
 </body>
 </html>
