@@ -1,22 +1,16 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use DB;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
-class ProductController
+class ProductController extends Controller
 {
-    public function show($product)
+    public function index()
     {
-        $products = [
-            'name' => 'Cadbury',
-            'description' => 'Chocolate',
-            'price' => 50
-        ];
-    
-        if(!array_key_exists($product, $products)){
-            abort(404,'Sorry, not found!');
-        }
-    
-        return view('test',['product' => $products[$product]]);
-    
+        $products = DB::select('select * from product');
+        return view('test',['products'=>$products]);
     }
 }
