@@ -13,19 +13,4 @@ use Illuminate\Support\Facades\Route;
 |
 */ 
 
-/*Route::get('/{product}', function ($product) {
-    $products = [
-        'name' => 'Cadbury',
-        'description' => 'Chocolate',
-        'price' => 50
-    ];
-
-    if(!array_key_exists($product, $products)){
-        abort(404,'Sorry, not found!');
-    }
-
-    return view('test',['product' => $products[$product]]);
-});*/
-
-
-Route::get('/{product}', 'ProductController@show');
+Route::get('/', 'ProductController@index');
