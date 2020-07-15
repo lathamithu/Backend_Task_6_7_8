@@ -15,6 +15,19 @@
 <body>
     <h1>Product </h1>
 
-    <p>{{ $product }}</p>
+    <table border = 1>
+         <tr>
+            <td>NAME</td>
+            <td>DESCRIPTION</td>
+            <td>PRICE</td>
+         </tr>
+            @foreach ($products as $product)
+            <tr>
+            <td>{{ $product->Name }}</td>
+            <td>{{ $product->Description }}</td>
+            <td>{{ $product->Price }}</td>
+            </tr>
+            @endforeach
+    </table>
 </body>
 </html>
